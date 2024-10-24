@@ -1,17 +1,12 @@
 //TASK 2
 #include <iostream>
 int reversingNum(int num){
-    int length=0,copyOfNum=num,reversedNum=0;
+    int result=0,copyOfNum=num;
     while(copyOfNum!=0){
-        length++;
+        result = result*10 + copyOfNum%10;
         copyOfNum /= 10;
     }
-    copyOfNum = num;
-    for(int i=0;i<length;i++) {
-        reversedNum = reversedNum*10 + copyOfNum%10;
-        copyOfNum /= 10;
-    }
-    return reversedNum;
+    return result;
 }
 int main(){
     int num;
