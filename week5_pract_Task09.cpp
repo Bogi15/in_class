@@ -1,26 +1,24 @@
-//ideqta koqto mi kaza momchil da namerq poslednata cifra da q zapazq v previous i da produlja da smqtam ako n > 10 togava namiram poslednata pak i proverqvam dali e ravna na previous
 #include <iostream>
-int kNumbersLength(int k){
-    int length=0;
-    while(k!=0){
-        length++;
+bool sameNeigbouringDigits(int k){
+    int previousDigit=k % 10;
+    k /= 10;
+   
+    while(k > 0){
+        int lastDigitOfK= k % 10;
+        if(lastDigitOfK == previousDigit) return true;
+        previousDigit = lastDigitOfK;
         k /= 10;
     }
-    return length;
-}
-int sameNeigbouringDigits(int k){
-    while(length-1!==0){
-        
-    }
+    
+    return false;
 }
 void run(){
   int k,l;
   std::cin>>k>>l; 
-  for(int i=k;k<=l;i++){
-      
+  for(int i = k;i <= l;i++){
+      if(sameNeigbouringDigits(i)) std::cout<<i<<" ";
   }
 }
 int main() {
- 
-  
+ run();
 }
